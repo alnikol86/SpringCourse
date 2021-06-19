@@ -21,21 +21,27 @@
           class="ru.nikolaev.springcourse.JazzMusic">
     </bean>
 
-
-
-    <bean id="musicPlayer"
-          class="ru.nikolaev.springcourse.MusicPlayer">
-<!--        <property name="name" value="Some name"/>-->
-<!--        <property name="volume" value="60"/>-->
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-        <property name="musicList">
-            <list>
-                <ref bean="rockBean"/>
-                <ref bean="classicalBean"/>
-                <ref bean="jazzBean"/>
-            </list>
-        </property>
+    <bean id="musicBean"
+          class="ru.nikolaev.springcourse.ClassicalMusic"
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
     </bean>
+
+
+<!--    <bean id="musicPlayer"-->
+<!--          class="ru.nikolaev.springcourse.MusicPlayer">-->
+<!--&lt;!&ndash;        <property name="name" value="Some name"/>&ndash;&gt;-->
+<!--&lt;!&ndash;        <property name="volume" value="60"/>&ndash;&gt;-->
+<!--        <property name="name" value="${musicPlayer.name}"/>-->
+<!--        <property name="volume" value="${musicPlayer.volume}"/>-->
+<!--        <property name="musicList">-->
+<!--            <list>-->
+<!--                <ref bean="rockBean"/>-->
+<!--                <ref bean="classicalBean"/>-->
+<!--                <ref bean="jazzBean"/>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
 </beans>
