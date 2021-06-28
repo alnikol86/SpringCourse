@@ -9,7 +9,6 @@ public class Computer {
     private MusicPlayer musicPlayer;
 
 
-    @Autowired
     public Computer(MusicPlayer musicPlayer) {
         id = 1;
         this.musicPlayer = musicPlayer;
